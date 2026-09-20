@@ -97,15 +97,15 @@
             <!-- Curled Doodle Arrow & Handwritten Motto -->
             <div class="hero-doodle-wrapper">
                 <span class="hero-handwritten-text">Education today, a better tomorrow!</span>
-                <svg class="hero-doodle-arrow" width="80" height="50" viewBox="0 0 90 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 15 C 40 5, 70 25, 48 50" stroke="#6B7280" stroke-width="1.8" stroke-dasharray="3 3" stroke-linecap="round"/>
-                    <path d="M38 46 L 48 50 L 46 39" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg class="hero-doodle-arrow" width="70" height="50" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12 C 32 10, 52 22, 42 42" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M34 38 L 42 42 L 43 32" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
 
-            <!-- Student Portrait Image -->
+            <!-- Student Portrait Image (Transparent PNG) -->
             <div class="hero-student-wrapper">
-                <img src="${pageContext.request.contextPath}/images/hero-student.jpg" alt="Student learning with Elearn" class="hero-student-photo">
+                <img src="${pageContext.request.contextPath}/images/hero-student.png" alt="Student learning with Elearn" class="hero-student-photo">
             </div>
 
             <!-- 3 Stacked Floating Cards on Right -->
