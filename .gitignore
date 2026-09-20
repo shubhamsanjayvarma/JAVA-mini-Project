@@ -1,0 +1,29 @@
+# Build Output
+target/
+*.war
+*.ear
+*.class
+
+# IDE & Editor Files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+*.suo
+*.user
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs & Temporary Files
+*.log
+*.tmp
+temp/
+
+# Environment-specific configuration
+# Keep db.properties.example in repo, local db.properties can be adjusted per machine
+# db.properties
