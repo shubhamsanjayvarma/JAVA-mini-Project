@@ -43,7 +43,11 @@ INSERT INTO courses (course_id, instructor_id, title, description, category, dur
 (1, 2, 'Full Stack Java Programming (Course 2113611)', 'Comprehensive coverage of server-side Java web architecture including Java Servlets, JSP lifecycle, MVC design pattern, JDBC persistence, and session security.', 'Computer Science', 45, 'PUBLISHED'),
 (2, 2, 'Relational Database Management with MySQL', 'Fundamentals of relational data modeling, normalization (1NF-BCNF), ACID properties, indexed queries, transactions, and JDBC integration.', 'Database Systems', 30, 'PUBLISHED'),
 (3, 3, 'Data Structures & Algorithms in Java', 'Core algorithmic techniques: linear data structures, binary search trees, hashing, graph traversals, and asymptotic complexity analysis.', 'Algorithms', 40, 'PUBLISHED'),
-(4, 3, 'Web Technologies & Frontend Essentials', 'Foundational web development covering semantic HTML5 markup, responsive CSS layout techniques, and DOM interaction.', 'Web Development', 25, 'PUBLISHED');
+(4, 3, 'Web Technologies & Frontend Essentials', 'Foundational web development covering semantic HTML5 markup, responsive CSS layout techniques, and DOM interaction.', 'Web Development', 25, 'PUBLISHED'),
+(5, 3, 'Data Science with Python', 'Full masterclass covering Python data analysis, pandas, numpy, data visualization, and machine learning algorithms.', 'Data Science', 40, 'PUBLISHED'),
+(6, 2, 'Introduction to Artificial Intelligence', 'Foundational concepts of modern artificial intelligence, neural networks, intelligent agents, and computer vision.', 'Artificial Intelligence', 45, 'PUBLISHED'),
+(7, 3, 'Business Management Essentials', 'Essential strategies for corporate management, leadership, financial KPI modeling, and operational excellence.', 'Business', 30, 'PUBLISHED'),
+(8, 2, 'Cybersecurity Basics', 'Network security fundamentals, encryption protocols, ethical defense mechanisms, and digital threat mitigation.', 'Cybersecurity', 35, 'PUBLISHED');
 
 -- --------------------------------------------------------------------
 -- 3. MODULES
