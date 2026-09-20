@@ -19,6 +19,8 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setAttribute("isAuthPage", true);
+        request.setAttribute("isPublicPage", true);
         request.getRequestDispatcher("/register.jsp").forward(request, response);
     }
 
@@ -35,6 +37,8 @@ public class RegisterServlet extends HttpServlet {
 
         // Basic client validation check server-side
         if (password == null || !password.equals(confirmPassword)) {
+            request.setAttribute("isAuthPage", true);
+            request.setAttribute("isPublicPage", true);
             request.setAttribute("errorMessage", "Passwords do not match.");
             preserveFormFields(request, fullName, email, phone, bio, role);
             request.getRequestDispatcher("/register.jsp").forward(request, response);
@@ -45,6 +49,8 @@ public class RegisterServlet extends HttpServlet {
         if (error == null) {
             response.sendRedirect(request.getContextPath() + "/login?msg=registered");
         } else {
+            request.setAttribute("isAuthPage", true);
+            request.setAttribute("isPublicPage", true);
             request.setAttribute("errorMessage", error);
             preserveFormFields(request, fullName, email, phone, bio, role);
             request.getRequestDispatcher("/register.jsp").forward(request, response);

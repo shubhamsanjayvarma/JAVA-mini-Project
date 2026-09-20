@@ -43,6 +43,8 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("successMessage", "Registration successful! Please log in with your credentials.");
         }
 
+        request.setAttribute("isAuthPage", true);
+        request.setAttribute("isPublicPage", true);
         request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
@@ -53,6 +55,8 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (email == null || email.trim().isEmpty() || password == null || password.trim().isEmpty()) {
+            request.setAttribute("isAuthPage", true);
+            request.setAttribute("isPublicPage", true);
             request.setAttribute("errorMessage", "Both email and password are required.");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
             return;
@@ -64,6 +68,8 @@ public class LoginServlet extends HttpServlet {
             SessionUtil.setLoggedInUser(session, user);
             redirectToDashboard(response, request.getContextPath(), user.getRole());
         } else {
+            request.setAttribute("isAuthPage", true);
+            request.setAttribute("isPublicPage", true);
             request.setAttribute("errorMessage", "Invalid email or password. Please try again.");
             request.setAttribute("email", email);
             request.getRequestDispatcher("/login.jsp").forward(request, response);

@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:set var="pageTitle" value="Login" />
+<c:set var="isPublicPage" value="true" scope="request" />
+<c:set var="isAuthPage" value="true" scope="request" />
 <jsp:include page="/WEB-INF/includes/header.jsp" />
 
 <!-- ====================================================================

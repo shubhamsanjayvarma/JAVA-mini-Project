@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=4">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css?v=4">
 </head>
-<body>
+<body class="${isAuthPage ? 'auth-body' : ''}">
 <c:choose>
     <c:when test="${not empty sessionScope.userId and not isHomePage and not isPublicPage}">
         <!-- Authenticated App Frame Shell (Elearn Design System) -->
@@ -106,6 +106,6 @@
                 <jsp:include page="/WEB-INF/includes/nav-public.jsp" />
             </div>
         </header>
-        <main class="public-main-wrapper ${isHomePage ? 'public-main-home' : ''}">
+        <main class="public-main-wrapper ${isHomePage ? 'public-main-home' : ''} ${isAuthPage ? 'public-main-auth' : ''}">
     </c:otherwise>
 </c:choose>

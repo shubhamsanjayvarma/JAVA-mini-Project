@@ -7,6 +7,9 @@
             </div><!-- /.app-frame -->
         </div><!-- /.app-viewport -->
     </c:when>
+    <c:when test="${isAuthPage}">
+        </main>
+    </c:when>
     <c:otherwise>
         </main>
 
