@@ -59,6 +59,15 @@ public class UserService {
      * @return error message if registration fails, or null if successful
      */
     public String registerStudent(String fullName, String email, String password, String phone, String bio) {
+        return registerUser(fullName, email, password, phone, bio, "STUDENT");
+    }
+
+    /**
+     * Registers a new user account with a specified role (STUDENT, INSTRUCTOR, ADMIN).
+     *
+     * @return error message if registration fails, or null if successful
+     */
+    public String registerUser(String fullName, String email, String password, String phone, String bio, String role) {
         if (fullName == null || fullName.trim().isEmpty()) {
             return "Full name is required.";
         }
@@ -78,7 +87,16 @@ public class UserService {
         user.setFullName(fullName.trim());
         user.setEmail(normalizedEmail);
         user.setPasswordHash(PasswordUtil.hashPassword(password));
-        user.setRole("STUDENT");
+        if (role != null && !role.trim().isEmpty()) {
+            String upper = role.trim().toUpperCase();
+            if ("INSTRUCTOR".equals(upper) || "ADMIN".equals(upper)) {
+                user.setRole(upper);
+            } else {
+                user.setRole("STUDENT");
+            }
+        } else {
+            user.setRole("STUDENT");
+        }
         user.setStatus("ACTIVE");
         user.setPhone(phone != null ? phone.trim() : null);
         user.setBio(bio != null ? bio.trim() : null);
