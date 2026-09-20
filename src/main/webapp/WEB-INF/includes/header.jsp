@@ -15,7 +15,7 @@
 </head>
 <body>
 <c:choose>
-    <c:when test="${not empty sessionScope.userId}">
+    <c:when test="${not empty sessionScope.userId and not isHomePage and not isPublicPage}">
         <!-- Authenticated App Frame Shell (Elearn Design System) -->
         <div class="app-viewport">
             <div class="app-frame">

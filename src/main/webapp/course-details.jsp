@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <c:set var="pageTitle" value="${course.title} - Course Details" />
+<c:set var="isPublicPage" value="true" />
 <jsp:include page="/WEB-INF/includes/header.jsp" />
 
 <c:if test="${not empty param.error}">

@@ -1299,20 +1299,508 @@ textarea.form-control {
 }
 
 /* --------------------------------------------------------------------
-   PUBLIC FOOTER
+   ELEARN CALL-TO-ACTION (CTA) BANNER (Matches Reference Mockup)
    -------------------------------------------------------------------- */
-.public-footer {
+.footer-cta-section {
     background-color: #ffffff;
-    color: var(--text-muted);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    font-size: 0.825rem;
-    border-top: 1px solid var(--border-color);
-    margin-top: auto;
+    padding: 3.5rem 1.5rem 3.5rem;
+    position: relative;
+    z-index: 2;
 }
 
-.public-footer p {
-    margin-bottom: 0.35rem;
+.footer-cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-cta-card {
+    background: linear-gradient(135deg, #FFFDFB 0%, #FFF5EE 50%, #FFEADB 100%);
+    border: 1px solid #FFDEC9;
+    border-radius: 24px;
+    padding: 2.75rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    box-shadow: 0 16px 40px -12px rgba(255, 101, 0, 0.08);
+}
+
+/* Background Peach Aura Decorative Rings */
+.footer-cta-card::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -50px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 101, 0, 0.09) 0%, rgba(255, 230, 215, 0.35) 60%, transparent 75%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.footer-cta-card::after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    bottom: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 101, 0, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.footer-cta-dots {
+    position: absolute;
+    right: 2.5rem;
+    top: 1.5rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Left Graduation Cap Badge & Sparkle Accents */
+.footer-cta-icon-group {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-sparkle-rays {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+}
+
+.sparkle-ray {
+    background-color: #FF6500;
+    border-radius: 4px;
+    display: block;
+}
+
+.sparkle-ray-1 {
+    width: 14px;
+    height: 3.5px;
+    transform: rotate(-25deg);
+}
+
+.sparkle-ray-2 {
+    width: 12px;
+    height: 3.5px;
+    transform: rotate(25deg);
+}
+
+.footer-cta-cap-badge {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #FFF1E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(255, 101, 0, 0.12);
+    border: 2px solid #FFE4D6;
+    flex-shrink: 0;
+}
+
+/* Content Block */
+.footer-cta-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-cta-eyebrow {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #FF6500;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.footer-cta-heading {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: #101828;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.footer-cta-subtext {
+    font-size: 1rem;
+    color: #475467;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Right Action Button */
+.footer-cta-action {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-cta-btn {
+    background: linear-gradient(135deg, #FF6500 0%, #E55A00 100%);
+    color: #ffffff !important;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 1rem 2.25rem;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 10px 24px rgba(255, 101, 0, 0.38);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.footer-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(255, 101, 0, 0.48);
+    color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------
+   ELEARN DEEP DARK NAVY 5-COLUMN FOOTER
+   -------------------------------------------------------------------- */
+.elearn-dark-footer {
+    background-color: #131E2A;
+    color: #98A2B3;
+    padding: 4.5rem 1.5rem 2.5rem;
+    font-size: 0.92rem;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-columns-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr 1.05fr 1.05fr 1.15fr;
+    gap: 2.75rem;
+}
+
+/* Brand Column */
+.footer-col-brand {
+    padding-right: 0.5rem;
+}
+
+.footer-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    margin-bottom: 1.15rem;
+}
+
+.footer-brand-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.footer-brand-subtitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #98A2B3;
+    margin-top: 0.15rem;
+}
+
+.footer-brand-description {
+    color: #98A2B3;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+}
+
+.footer-social-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+}
+
+.footer-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #222D3D;
+    color: #D0D5DD;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-social-btn:hover {
+    background-color: #FF6500;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Cursive Motto in Footer */
+.footer-motto-wrapper {
+    display: inline-block;
+    transform: rotate(-6deg);
+    margin-top: 0.5rem;
+}
+
+.footer-motto-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #FF6500;
+    line-height: 1.15;
+}
+
+.footer-motto-curve {
+    width: 110px;
+    height: 14px;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Column Common Styling */
+.footer-col-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-list li {
+    margin-bottom: 0.85rem;
+}
+
+.footer-nav-list a {
+    color: #98A2B3;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.915rem;
+    transition: all 0.18s ease;
+}
+
+.footer-nav-list a:hover {
+    color: #FFFFFF;
+    transform: translateX(3px);
+}
+
+.nav-chevron {
+    font-size: 1.15rem;
+    line-height: 1;
+    color: #667085;
+    font-weight: 700;
+    transition: color 0.18s ease;
+}
+
+.footer-nav-list a:hover .nav-chevron {
+    color: #FF6500;
+}
+
+.footer-item-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke: #98A2B3;
+    transition: stroke 0.18s ease;
+}
+
+.footer-nav-list a:hover .footer-item-icon {
+    stroke: #FF6500;
+}
+
+/* Contact Column */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    color: #98A2B3;
+    font-size: 0.915rem;
+    line-height: 1.5;
+}
+
+.contact-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    stroke: #98A2B3;
+}
+
+.contact-text a {
+    color: #98A2B3;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+.contact-text a:hover {
+    color: #FFFFFF;
+}
+
+.contact-text strong {
+    color: #E4E7EC;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom-bar {
+    border-top: 1px solid #1C2735;
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-copyright {
+    color: #667085;
+    font-size: 0.88rem;
+}
+
+.footer-bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+    flex-wrap: wrap;
+}
+
+.footer-policy-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-policy-links a {
+    color: #98A2B3;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.18s ease;
+}
+
+.footer-policy-links a:hover {
+    color: #FFFFFF;
+}
+
+.policy-divider {
+    color: #334155;
+    font-size: 0.85rem;
+}
+
+.footer-built-by {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-heart-svg {
+    flex-shrink: 0;
+    animation: heartPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+.footer-built-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    line-height: 1.25;
+}
+
+.built-line1 {
+    color: #98A2B3;
+    font-weight: 600;
+}
+
+.built-line2 {
+    color: #667085;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .footer-columns-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+    .footer-col-brand {
+        grid-column: span 3;
+    }
+    .footer-cta-card {
+        padding: 2.25rem 2rem;
+    }
+    .footer-cta-heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+    .footer-cta-icon-group {
+        justify-content: center;
+    }
+    .cta-sparkle-rays {
+        display: none;
+    }
+    .footer-columns-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .footer-col-brand {
+        grid-column: span 1;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    .footer-bottom-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
 }
 
 /* --------------------------------------------------------------------

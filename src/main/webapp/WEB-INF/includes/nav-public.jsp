@@ -28,9 +28,27 @@
         <input type="text" name="q" class="nav-search-input" placeholder="Search courses, instructors..." value="${param.q != null ? param.q : ''}">
     </form>
 
-    <!-- Right Login & Register Buttons -->
+    <!-- Right Login & Register or Dashboard Buttons -->
     <div class="nav-auth-buttons">
-        <a href="${pageContext.request.contextPath}/login" class="btn-nav-login">Login</a>
-        <a href="${pageContext.request.contextPath}/register" class="btn-nav-register">Register</a>
+        <c:choose>
+            <c:when test="${not empty sessionScope.userId}">
+                <c:choose>
+                    <c:when test="${sessionScope.userRole eq 'STUDENT'}">
+                        <a href="${pageContext.request.contextPath}/student/dashboard" class="btn-nav-login">Dashboard</a>
+                    </c:when>
+                    <c:when test="${sessionScope.userRole eq 'INSTRUCTOR'}">
+                        <a href="${pageContext.request.contextPath}/instructor/dashboard" class="btn-nav-login">Dashboard</a>
+                    </c:when>
+                    <c:when test="${sessionScope.userRole eq 'ADMIN'}">
+                        <a href="${pageContext.request.contextPath}/admin/dashboard" class="btn-nav-login">Dashboard</a>
+                    </c:when>
+                </c:choose>
+                <a href="${pageContext.request.contextPath}/logout" class="btn-nav-register" style="background:#fee2e2; color:#b91c1c; border-color:#fca5a5;">Logout</a>
+            </c:when>
+            <c:otherwise>
+                <a href="${pageContext.request.contextPath}/login" class="btn-nav-login">Login</a>
+                <a href="${pageContext.request.contextPath}/register" class="btn-nav-register">Register</a>
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
