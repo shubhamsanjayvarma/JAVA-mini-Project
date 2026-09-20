@@ -1952,6 +1952,21 @@ body.auth-body .public-main-wrapper {
 .role-card-icon-box svg {
     width: 16px;
     height: 16px;
+    transition: all 0.2s ease;
+}
+
+.reg-role-card.active .role-card-icon-box {
+    background: #FF6500;
+}
+
+.reg-role-card.active .role-card-icon-box svg {
+    fill: #ffffff;
+    stroke: #ffffff;
+}
+
+.reg-role-card.active .role-card-icon-box svg path {
+    fill: #ffffff;
+    stroke: #ffffff;
 }
 
 .role-card-info {
@@ -2182,7 +2197,6 @@ body.auth-body .public-main-wrapper {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-left: 1px solid #FFEADB;
 }
 
 .auth-showcase-panel-wrapper {
