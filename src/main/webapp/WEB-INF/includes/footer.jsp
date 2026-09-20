@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:choose>
     <c:when test="${not empty sessionScope.userId}">
+                    </main><!-- /.dashboard-main-body -->
                 </div><!-- /.app-content-wrapper -->
             </div><!-- /.app-frame -->
         </div><!-- /.app-viewport -->
