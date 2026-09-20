@@ -91,15 +91,18 @@
             <!-- Warm Aura Backdrop Circle -->
             <div class="hero-aura-circle"></div>
 
-            <!-- Dotted Pattern Accent -->
+            <!-- Dotted Pattern Accent (Top Right) -->
             <div class="hero-dots-accent"></div>
+
+            <!-- Dotted Pattern Accent (Left under doodle) -->
+            <div class="hero-dots-left"></div>
 
             <!-- Curled Doodle Arrow & Handwritten Motto -->
             <div class="hero-doodle-wrapper">
-                <span class="hero-handwritten-text">Education today, a better tomorrow!</span>
-                <svg class="hero-doodle-arrow" width="70" height="50" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12 C 32 10, 52 22, 42 42" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"/>
-                    <path d="M34 38 L 42 42 L 43 32" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <span class="hero-handwritten-text">Education<br>today, a better<br>tomorrow!</span>
+                <svg class="hero-doodle-arrow" width="95" height="75" viewBox="0 0 95 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 16 8 C 18 40, 42 54, 82 48" stroke="#5b677a" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M 68 39 L 82 48 L 70 57" stroke="#5b677a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
 
