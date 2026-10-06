@@ -1,0 +1,21 @@
+{
+  "name": "online-course-management-system",
+  "version": "1.0.0",
+  "description": "Online Course Management System (OCMS) - Jakarta Servlet + JSP + JDBC + MySQL",
+  "main": "dev.js",
+  "scripts": {
+    "dev": "node dev.js",
+    "start": "node dev.js",
+    "build": "mvn clean package -DskipTests",
+    "stop": "node -e \"const { execSync } = require('child_process'); const p = process.platform === 'win32' ? 'catalina.bat stop' : 'catalina.sh stop'; const h = process.env.CATALINA_HOME || 'C:\\\\Users\\\\sv369\\\\tools\\\\apache-tomcat-10.1.60'; execSync(require('path').join(h, 'bin', p), { stdio: 'inherit' });\""
+  },
+  "keywords": [
+    "java",
+    "jakarta-servlet",
+    "jsp",
+    "tomcat",
+    "ocms"
+  ],
+  "author": "Shubham Sanjay Varma",
+  "license": "ISC"
+}
