@@ -27,3 +27,6 @@ temp/
 # Environment-specific configuration
 # Keep db.properties.example in repo, local db.properties can be adjusted per machine
 # db.properties
+
+.vercel
+public/

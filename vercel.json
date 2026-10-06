@@ -1,0 +1,6 @@
+{
+  "name": "coursemanagement",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "outputDirectory": "public"
+}
