@@ -26,12 +26,20 @@ public class DBConnection {
                 LOGGER.severe("Unable to locate db.properties on classpath.");
             } else {
                 properties.load(input);
-                String driver = properties.getProperty("db.driver", "com.mysql.cj.jdbc.Driver");
-                Class.forName(driver);
-                LOGGER.info("MySQL JDBC Driver registered successfully: " + driver);
             }
-        } catch (IOException | ClassNotFoundException e) {
-            LOGGER.log(Level.SEVERE, "Failed to initialize database driver or read db.properties", e);
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Failed to read db.properties", e);
+        }
+
+        try {
+            String driver = System.getenv("DB_DRIVER");
+            if (driver == null || driver.trim().isEmpty()) {
+                driver = properties.getProperty("db.driver", "com.mysql.cj.jdbc.Driver");
+            }
+            Class.forName(driver);
+            LOGGER.info("MySQL JDBC Driver registered successfully: " + driver);
+        } catch (ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, "Failed to initialize database driver", e);
         }
     }
 
@@ -47,12 +55,23 @@ public class DBConnection {
      * @throws SQLException if a database access error occurs
      */
     public static Connection getConnection() throws SQLException {
-        String url = properties.getProperty("db.url");
-        String user = properties.getProperty("db.username");
-        String pass = properties.getProperty("db.password");
+        String url = System.getenv("DB_URL");
+        if (url == null || url.trim().isEmpty()) {
+            url = properties.getProperty("db.url");
+        }
+
+        String user = System.getenv("DB_USERNAME");
+        if (user == null || user.trim().isEmpty()) {
+            user = properties.getProperty("db.username");
+        }
+
+        String pass = System.getenv("DB_PASSWORD");
+        if (pass == null) {
+            pass = properties.getProperty("db.password");
+        }
 
         if (url == null) {
-            throw new SQLException("Database connection URL not configured in db.properties.");
+            throw new SQLException("Database connection URL not configured in environment or db.properties.");
         }
 
         return DriverManager.getConnection(url, user, pass);
